@@ -21,6 +21,6 @@
         </style>
     </head>
     <body class="antialiased">
-        <h1 class="text-blue-800 text-center text-7xl"> {{ $name }}</h1>
+        <h1 class="text-blue-800 text-center text-7xl"> Rean Code</h1>
     </body>
 </html>

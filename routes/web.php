@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\ProductController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -13,18 +14,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    $name = request('name');
-    return view('welcome', [
-        'name' => $name
-    ]);
-//    return view('welcome');
+Route::get('/', function() {
+    return view('welcome');
 });
 
-Route::get('/home', function () {
-    return view('home');
-});
 
-Route::get('/message', function () {
-    return "<h1>Welcome To Rean Code</h1>";
-});
+Route::get('products/{product}', [ProductController::class, 'show']);
