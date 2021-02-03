@@ -2,23 +2,18 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Product;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\DB;
 
 class ProductController extends Controller
 {
-    public function show($product)
+    public function show()
     {
-        $products = [
-           'my-first-item' => "This is my first item",
-           'my-second-item' => "this is my second item"
-         ];
-
-        if(! array_key_exists($product, $products)) {
-            abort(404, "Not Found");
-        }
-
-        return view('product', [
-           'product'  => $products[$product]
-        ]);
+//       $products = DB::table('products')->get();
+        $products = Product::get();
+       return view('product', [
+           'products' => $products
+       ]);
     }
 }
